@@ -23,80 +23,26 @@
 
 
 
-class Cola:
-
-    def __init__(self, cola_price=input('投入金額を入力して下さい：')):
-        self.cola_price = cola_price
-
-
-    def buy(self):
-        if self.cola_price == 120:
-            print('コーラを購入しました')
-
-        elif self.cola_price > 120:
-            print('コーラを購入しました')
-            print('お釣りは¥' + str( self.cola_price - 120 ) + 'です')
-        
-        else:
-            print('投入金額が不足しています')
-            print(str( 120 - self.cola_price ) + '円足りません')
-
-            
-class Tea:
-
-    def __init__(self, tea_price):
-        self.tea_price = tea_price
-
-    def buy(self):
-        if self.tea_price == 80:
-            print('お茶を購入しました')
-
-        elif self.tea_price > 80:
-            print('お茶を購入しました')
-            print('お釣りは¥' + str( self.tea_price - 80 ) + 'です')
-        
-        else:
-            print('投入金額が不足しています')
-            print(str( 80 - self.tea_price ) + '円足りません')
-
-
-class Cofe:
-
-    def __init__(self, cofe_price):
-        self.cofe_price = cofe_price
-
-    def buy(self):
-        if self.cofe_price == 100:
-            print('コーヒーを購入しました')
-
-        elif self.cofe_price > 100:
-            print('コーヒーを購入しました')
-            print('お釣りは¥' + str( self.cofe_price - 100 ) + 'です')
-        
-        else:
-            print('投入金額が不足しています')
-            print(str( 100 - self.cofe_price ) + '円足りません')
-
-
-
-cola = Cola
-tea = Tea
-cofe = Cofe
 
 print('コーラ', 'お茶', 'コーヒー')
 
-type = input('購入する商品を選んで下さい：')
+drink_type = input('購入する商品を選んで下さい：')
 
+drink_list = {'コーラ':120, 'お茶':80, 'コーヒー':100}
 
+for drink in drink_list['コーラ', 'お茶', 'コーヒー']:
 
-if type == 'コーラ':
-    cola.buy()
+    if drink_type == 'コーラ':
+        input('投入金額を入力して下さい：')
+    
 
-elif type == 'お茶':
-    tea.buy(int('投入金額を入力して下さい：'))
+    elif drink_type == 'お茶':
+        input('投入金額を入力して下さい：')
+    
 
-elif type == 'コーヒー':
-    cofe.buy(int('投入金額を入力して下さい：'))
+    elif drink_type == 'コーヒー':
+        input('投入金額を入力して下さい：')
+    
 
-else:
-    print('該当商品がありません')
+    else:
+        print('該当商品がありません')
