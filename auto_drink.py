@@ -24,33 +24,28 @@
 
 
 
+
 print('コーラ', 'お茶', 'コーヒー')
-
-drink_type = input('購入する商品を選んで下さい：')
-
-drink_price = input('投入金額を入力して下さい：')
-
-buy_select = input('購入を続けますか？　y/n:')
 
 drink_dic = {'コーラ':120, 'お茶':80, 'コーヒー':100}
 
-while drink_type == drink_dic:
+def drink_select():
+    input('購入する商品を選んで下さい：')
 
-    if drink_type == 'コーラ':
-        print(drink_dic['コーラ'],'円です')
+def drink_price():
+    input('投入金額を入力して下さい：')
+
+
+while  drink_select() in drink_dic.keys():
+    print('終わり')
+
+
+    
+
+
 
        
 
 
     
 
-    elif drink_type == 'お茶':
-        input('投入金額を入力して下さい：')
-    
-
-    elif drink_type == 'コーヒー':
-        input('投入金額を入力して下さい：')
-    
-
-    else:
-        print('該当商品がありません')
