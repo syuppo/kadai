@@ -24,6 +24,7 @@
 
 
 import sys
+import os
 
 
 drink_dic = {'コーラ':120, 'お茶':80, 'コーヒー':100}
@@ -34,53 +35,59 @@ while True:
 
     if drink_type == 'コーラ':
         print(drink_dic['コーラ'],'円です')
-        price = int(input('投入金額を入力して下さい：'))
+        try:
+            price = int(input('投入金額を入力して下さい：'))
 
-        if  price == drink_dic['コーラ']:
-            print('商品を購入しました')
-            print('お釣りはありません')
-            x = input('購入を続けますか？ y/n:')
-            if x == 'y':
-                continue
-            elif x == 'n':
-                break
-
-        elif price > drink_dic['コーラ']:
-            print('商品を購入しました')
-            print('お釣りは',price - drink_dic['コーラ'],'円です')
-            x = input('購入を続けますか？ y/n:')
-            if x == 'y':
-                continue
-            elif x == 'n':
-                break
-        
-        else:
-            shortage = drink_dic['コーラ'] - price
-            print('投入金額が不足しています')
-            print(shortage,'円足りません')
-
-            while shortage > 0:
-                shortage2 = shortage - int(input('投入金額を入力して下さい：'))         
-                if shortage2 == 0:
-                    print('商品を購入しました')
-                    print('お釣りはありません')
-                    break
-
-                elif shortage2 > 0:
-                    print('投入金額が不足しています')
-                    print(shortage2,'円足りません')
-                    shortage = shortage2
+            if  price == drink_dic['コーラ']:
+                print('商品を購入しました')
+                print('お釣りはありません')
+                x = input('購入を続けますか？ y/n:')
+                if x == 'y':
+                    os.system('clear')
                     continue
-
-                elif shortage2 < 0:
-                    print('商品を購入しました')
-                    print('お釣りは',shortage2*-1,'円です')
+                elif x == 'n':
                     break
 
+            elif price > drink_dic['コーラ']:
+                print('商品を購入しました')
+                print('お釣りは',price - drink_dic['コーラ'],'円です')
+                x = input('購入を続けますか？ y/n:')
+                if x == 'y':
+                    os.system('clear')
+                    continue
+                elif x == 'n':
+                    break
+            
+            else:
+                shortage = drink_dic['コーラ'] - price
+                print('投入金額が不足しています')
+                print(shortage,'円足りません')
+
+                while shortage > 0:
+                    shortage2 = shortage - int(input('投入金額を入力して下さい：'))         
+                    if shortage2 == 0:
+                        print('商品を購入しました')
+                        print('お釣りはありません')
+                        break
+
+                    elif shortage2 > 0:
+                        print('投入金額が不足しています')
+                        print(shortage2,'円足りません')
+                        shortage = shortage2
+                        continue
+
+                    elif shortage2 < 0:
+                        print('商品を購入しました')
+                        print('お釣りは',shortage2*-1,'円です')
+                        break
+        except ValueError:
+            print('※数値を入力して下さい')
+            
 
         while True:
             x = input('購入を続けますか？ y/n:')
             if x == 'y':
+                os.system('clear')
                 break
 
             elif x == 'n':
@@ -92,53 +99,61 @@ while True:
 
     elif drink_type == 'お茶':
         print(drink_dic['お茶'],'円です')
-        price = int(input('投入金額を入力して下さい：'))
 
-        if  price == drink_dic['お茶']:
-            print('商品を購入しました')
-            print('お釣りはありません')
-            x = input('購入を続けますか？ y/n:')
-            if x == 'y':
-                continue
-            elif x == 'n':
-                break
+        try:
+            price = int(input('投入金額を入力して下さい：'))
 
-        elif price > drink_dic['お茶']:
-            print('商品を購入しました')
-            print('お釣りは',price - drink_dic['お茶'],'円です')
-            x = input('購入を続けますか？ y/n:')
-            if x == 'y':
-                continue
-            elif x == 'n':
-                break
-        
-        else:
-            shortage = drink_dic['お茶'] - price
-            print('投入金額が不足しています')
-            print(shortage,'円足りません')
-
-            while shortage > 0:
-                shortage2 = shortage - int(input('投入金額を入力して下さい：'))         
-                if shortage2 == 0:
-                    print('商品を購入しました')
-                    print('お釣りはありません')
-                    break
-
-                elif shortage2 > 0:
-                    print('投入金額が不足しています')
-                    print(shortage2,'円足りません')
-                    shortage = shortage2
+            if  price == drink_dic['お茶']:
+                print('商品を購入しました')
+                print('お釣りはありません')
+                x = input('購入を続けますか？ y/n:')
+                if x == 'y':
+                    os.system('clear')
                     continue
-
-                elif shortage2 < 0:
-                    print('商品を購入しました')
-                    print('お釣りは',shortage2*-1,'円です')
+                elif x == 'n':
                     break
+
+            elif price > drink_dic['お茶']:
+                print('商品を購入しました')
+                print('お釣りは',price - drink_dic['お茶'],'円です')
+                x = input('購入を続けますか？ y/n:')
+                if x == 'y':
+                    os.system('clear')
+                    continue
+                elif x == 'n':
+                    break
+            
+            else:
+                shortage = drink_dic['お茶'] - price
+                print('投入金額が不足しています')
+                print(shortage,'円足りません')
+
+                while shortage > 0:
+                    shortage2 = shortage - int(input('投入金額を入力して下さい：'))         
+                    if shortage2 == 0:
+                        print('商品を購入しました')
+                        print('お釣りはありません')
+                        break
+
+                    elif shortage2 > 0:
+                        print('投入金額が不足しています')
+                        print(shortage2,'円足りません')
+                        shortage = shortage2
+                        continue
+
+                    elif shortage2 < 0:
+                        print('商品を購入しました')
+                        print('お釣りは',shortage2*-1,'円です')
+                        break
+            
+        except ValueError:
+            print('※数値を入力して下さい')
 
 
         while True:
             x = input('購入を続けますか？ y/n:')
             if x == 'y':
+                os.system('clear')
                 break
 
             elif x == 'n':
@@ -151,52 +166,60 @@ while True:
                 
     elif drink_type == 'コーヒー':
         print(drink_dic['コーヒー'],'円です')
-        price = int(input('投入金額を入力して下さい：'))
 
-        if  price == drink_dic['コーヒー']:
-            print('商品を購入しました')
-            print('お釣りはありません')
-            x = input('購入を続けますか？ y/n:')
-            if x == 'y':
-                continue
-            elif x == 'n':
-                break
+        try:
+            price = int(input('投入金額を入力して下さい：'))
 
-        elif price > drink_dic['コーヒー']:
-            print('商品を購入しました')
-            print('お釣りは',price - drink_dic['コーヒー'],'円です')
-            x = input('購入を続けますか？ y/n:')
-            if x == 'y':
-                continue
-            elif x == 'n':
-                break
-        
-        else:
-            shortage = drink_dic['コーヒー'] - price
-            print('投入金額が不足しています')
-            print(shortage,'円足りません')
-
-            while shortage > 0:
-                shortage2 = shortage - int(input('投入金額を入力して下さい：'))         
-                if shortage2 == 0:
-                    print('商品を購入しました')
-                    print('お釣りはありません')
-                    break
-
-                elif shortage2 > 0:
-                    print('投入金額が不足しています')
-                    print(shortage2,'円足りません')
-                    shortage = shortage2
+            if  price == drink_dic['コーヒー']:
+                print('商品を購入しました')
+                print('お釣りはありません')
+                x = input('購入を続けますか？ y/n:')
+                if x == 'y':
+                    os.system('clear')
                     continue
-
-                elif shortage2 < 0:
-                    print('商品を購入しました')
-                    print('お釣りは',shortage2*-1,'円です')
+                elif x == 'n':
                     break
+
+            elif price > drink_dic['コーヒー']:
+                print('商品を購入しました')
+                print('お釣りは',price - drink_dic['コーヒー'],'円です')
+                x = input('購入を続けますか？ y/n:')
+                if x == 'y':
+                    os.system('clear')
+                    continue
+                elif x == 'n':
+                    break
+            
+            else:
+                shortage = drink_dic['コーヒー'] - price
+                print('投入金額が不足しています')
+                print(shortage,'円足りません')
+
+                while shortage > 0:
+                    shortage2 = shortage - int(input('投入金額を入力して下さい：'))         
+                    if shortage2 == 0:
+                        print('商品を購入しました')
+                        print('お釣りはありません')
+                        break
+
+                    elif shortage2 > 0:
+                        print('投入金額が不足しています')
+                        print(shortage2,'円足りません')
+                        shortage = shortage2
+                        continue
+
+                    elif shortage2 < 0:
+                        print('商品を購入しました')
+                        print('お釣りは',shortage2*-1,'円です')
+                        break
+
+        except ValueError:
+            print('※数値を入力して下さい')
 
         while True:
             x = input('購入を続けますか？ y/n:')
             if x == 'y':
+                os.system('clear')
                 break
 
             elif x == 'n':
@@ -212,6 +235,7 @@ while True:
         while True:
             x = input('購入を続けますか？ y/n:')
             if x == 'y':
+                os.system('clear')
                 break
 
             elif x == 'n':
@@ -219,21 +243,3 @@ while True:
 
             else:
                 continue
-
-
-
-
-
-
-
-
-
-    
-
-
-
-       
-
-
-    
-
